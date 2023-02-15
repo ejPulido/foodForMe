@@ -1,0 +1,15 @@
+{
+  "name": "foodformee",
+  "version": "1.0.0",
+  "description": "tarea programacion III",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eliezer Pulido",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1"
+  }
+}
