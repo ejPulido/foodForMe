@@ -1,0 +1,19 @@
+<%- include('./partials/header')%>
+    <div class="all-green">
+
+        <div class="card">
+            <h2>Registro</h2>
+            <form action="/signup" class="formCard" method="POST">
+                <input type="text" class="inputTextAll" placeholder="Nombre" name="name">
+                <input type="text" class="inputTextAll" placeholder="Apellido" n name="lastname">
+                <input type="email" class="inputTextAll" placeholder="Correo" name="email">
+                <input type="password" class="inputTextAll" name="pass" placeholder="contraseña">
+
+                <button type="submit" class="ctaBtn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/script/script.js"></script>
+</body>
+</html>
