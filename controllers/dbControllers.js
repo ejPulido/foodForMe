@@ -9,7 +9,7 @@ database.test = function(x){
 database.insertUserData = async function(data){
 	try{
 		const {name, lastname, email, pass} = data
-		const user = new Users({email, data: {name, lastname, pass }})
+		const user = new Users({email, pass, data: {name, lastname}})
 		await user.save()
 		return true
 	}catch(e){
@@ -21,5 +21,42 @@ database.insertUserData = async function(data){
 
 database.readUserData = async function(data){
 	const {email, pass} = data
+
+	try{
+		const dataUser = await Users.findOne({email}).lean()
+		return dataUser
+		
+	}catch(e){
+		console.log(e)
+	}
 }
+
+database.updateDocument = async function(id, newName, newLastname){
+	try {
+
+		const updateUser = await Users.findOneAndUpdate({ _id:id }, { data:{ name: newName, lastname: newLastname} })
+
+		console.log(updateUser)
+
+		return true
+	} catch(e) {
+		// statements
+		console.log(e);
+	}
+}
+
+database.deleteDocument = async function (email) {
+
+    try {
+        await Users.findByIdAndDelete(email)
+
+    	return true
+
+		
+    } catch (error) {
+        
+        console.log(error)
+    }
+}
+
 module.exports = database

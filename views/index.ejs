@@ -7,12 +7,19 @@
                     <h1 class="hero__title">FoodForMe</h1>
                 </div>
                 <div class="hero__infoContainer">
-                    <p class="hero__info">
-                        Sitio donde podras encontrar las mejores recetas
+                    <p class="hero__info"> 
+                        Saludos <%=name%>, este es el
+                        sitio donde podras encontrar las mejores recetas
                     </p>
+
                     <div class="hero__buttons">
-                        <a href="" class="hero__btnStart">Comenzar</a>
+                    <%if(active){%>
+                        <a href="profile" class="hero__btnStart">ver perfil</a>
+                     <%}else {%>
+                        <a href="signup" class="hero__btnStart">Comenzar</a>
+                    <%}%>
                     </div>
+
                 </div>
             </div>
             

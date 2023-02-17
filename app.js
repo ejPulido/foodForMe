@@ -1,13 +1,18 @@
 const express = require("express");
-
+const session = require("express-session")
 require('dotenv').config()
 require('./database/db.js')
 
 
 const app = express();
-
+app.use(session({
+    secret: "secreto",
+    resave:true,
+    saveUninitialized: true,
+})) 
 app.use(express.static("public"))
- 
+
+
 app.set('view engine', 'ejs')
 
 app.use(express.urlencoded({extended: true}))

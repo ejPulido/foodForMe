@@ -8,10 +8,11 @@ const userSchema = new Schema({
 		unique: true,
 		required: true,
 	},
+	pass:{type:String},
+
 	data:{
 		name:{type:String},
 		lastname:{type:String},
-		pass:{type:String}
 
 	},
 	recetas:{}

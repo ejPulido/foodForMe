@@ -1,0 +1,46 @@
+<%- include('./partials/header')%>
+	
+<div class="all-green">
+	<div class="card">
+		<div class="profile">
+			<div class="titleProfile">
+				<h2 class="tex">Datos Personales</h2>
+			</div>
+
+			<div class="personalData">
+				<div class="info">
+					<div class="infoCampo">
+					<strong>nombre:</strong> <%=name%>
+					</div>
+					<div class="infoCampo">
+					<strong>apellido:</strong> <%=lastname%>						
+					</div>
+				</div>
+
+				<a href="/delete">Eliminar esta cuenta</a>
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+			<div class="card">
+				<div class="titleProfile">
+					<h2 class="text">Editar nombre y apellido</h2>
+				</div>
+				<div class="form">
+					<form action="/profile" method="POST" class="formCard">
+                <input type="text" class="inputTextAll" placeholder="editar nombre" name="newName">
+                
+                <input type="text" class="inputTextAll" name="newLastname" placeholder="editar apellido">
+
+                <button type="submit" class="ctaBtn">Editar</button>
+            </form>
+				</div>
+			</div>
+</div>	
+
+<%- include('./partials/footer')%>

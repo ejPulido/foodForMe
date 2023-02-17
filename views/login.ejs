@@ -1,14 +1,16 @@
 <%- include('./partials/header')%>
     <div class="all-green">
-
+<div class=" <%=clase%>"><%if(msg){%> Usuario no encontrado
+                         <%}else {%>
+                    <%}%></div>
         <div class="card">
             <h2>Iniciar sesión</h2>
-            <form class="formCard">
+            <form action="/login"c method="POST" class="formCard">
                 <input type="text" class="inputTextAll" placeholder="correo electrónico" name="email">
                 
                 <input type="password" class="inputTextAll" name="pass" placeholder="contraseña">
 
-                <button type="submit" class="ctaBtn">Registrarse</button>
+                <button type="submit" class="ctaBtn">Iniciar Session</button>
             </form>
         </div>
     </div>
