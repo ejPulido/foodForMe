@@ -1,7 +1,7 @@
 const { log } = require('handlebars')
 
 const home = (req, res) =>{
-
+  console.log(req.session);
   res.render("index",{ name:req.session.name || "", lastname:req.session.lastname || "", active:req.session.active || false})  
 }
 

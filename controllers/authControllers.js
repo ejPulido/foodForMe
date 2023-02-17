@@ -44,14 +44,13 @@ const updateUserData = (req, res)=>{
 
 	req.session.name = newName
 	req.session.lastname = newLastname
-  res.render("index",{ name:req.session.name || "", lastname:req.session.lastname || "", active:req.session.active || false})  
+	
+  	res.render("index",{ name:req.session.name || "", lastname:req.session.lastname || "", active:req.session.active || false})  
 }
 
 const deleteAcount = (req, res)=>{ 
-	database.deleteDocument(req.session.email)
-
-	res.redirect("/")
-
+	database.deleteDocument(req.session.idUser)
+	res.redirect("/logout")
 }
 
 module.exports = { 

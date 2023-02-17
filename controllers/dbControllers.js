@@ -33,7 +33,6 @@ database.readUserData = async function(data){
 
 database.updateDocument = async function(id, newName, newLastname){
 	try {
-
 		const updateUser = await Users.findOneAndUpdate({ _id:id }, { data:{ name: newName, lastname: newLastname} })
 
 		console.log(updateUser)
@@ -45,14 +44,11 @@ database.updateDocument = async function(id, newName, newLastname){
 	}
 }
 
-database.deleteDocument = async function (email) {
-
+database.deleteDocument = async function (id) {
+	
     try {
-        await Users.findByIdAndDelete(email)
-
-    	return true
-
-		
+        await Users.findByIdAndDelete(id)
+    	return true		
     } catch (error) {
         
         console.log(error)
